@@ -1,3 +1,4 @@
+git+https://github.com/TeamAsterix/pyrogram
 pyrogram
 pytube
 telegraph
