@@ -15,18 +15,12 @@ from pyrogram import Client, filters
 from config import *
 from adon.bio import gen
 
-app.CMD_HELP.update(
-    {
-        "stickers": (
-            "stickers",
-            {
-                "kang [reply to sticker]": "Adds sticker to your pack or creates new sticker pack.",
-                "stinfo [ reply to sticker ]": "Get sticker pack info.",
-            },
-        )
-    }
+app = Client(
+    "Sticker Bot",
+    bot_token= BOT_TOKEN,
+    api_id= API_ID,
+    api_hash= API_HASH,
 )
-
 
 @app.on_message(filters.command("kang"))
 async def kang(_, m: Message):
@@ -278,3 +272,7 @@ KANGING_STR = (
     "Arresting This Sticker...",
     "Me Piro Steel Ur Stkr, Hehehe... ",
 )
+
+print("IM ALIVE")
+
+app.run()
