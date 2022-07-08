@@ -14,6 +14,8 @@ from pyrogram.types import Message
 from pyrogram import Client, filters
 from config import *
 from adon.bio import gen
+from pyrogram.types import *
+from pyrogram.types import Message
 
 app = Client(
     "Sticker Bot",
