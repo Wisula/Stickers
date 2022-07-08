@@ -203,23 +203,23 @@ async def kang(_, m: Message):
             os.remove(photo)
 
 
-@app.on_message(gen("stinfo", allow=["sudo"]))
+@app.on_message(filters.command("info"))
 async def sticker_pack_info_(_, m: Message):
     replied = m.reply_to_message
     if not replied:
-        return await app.send_edit(
+        return await bot.send_message(
             m, "I can't fetch info from nothing, can I ?!", text_type=["mono"]
         )
 
     if not replied.sticker:
-        return await app.send_edit(
+        return await message.edit(
             m, "Reply to a sticker to get the pack details.", text_type=["mono"]
         )
 
-    await app.send_edit(
+    await message.edit(
         m, "Fetching details of the sticker pack, please wait . . .", text_type=["mono"]
     )
-    get_stickerset = await app.send(
+    get_stickerset = await bot.send(
         GetStickerSet(
             stickerset=InputStickerSetShortName(short_name=replied.sticker.set_name)
         )
@@ -239,7 +239,7 @@ async def sticker_pack_info_(_, m: Message):
         f"**Stickers In Pack:** `{get_stickerset.set.count}`\n"
         f"**Emojis In Pack:**\n{' '.join(pack_emojis)}"
     )
-    await app.send_edit(m, out_str)
+    await bot.send_message(m, out_str)
 
 
 def resize_photo(photo: str) -> io.BytesIO:
