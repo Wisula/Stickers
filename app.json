@@ -1,0 +1,43 @@
+{
+    "name": "Sticker Tools",
+    "description": "When you going to send file on telegram channel/group this bot will save that in database, So you can search that easily in inline mode",
+    "keywords": [
+      "telegram",
+      "best",
+      "indian",
+      "pyrogram",
+      "media",
+      "search",
+      "channel",
+      "index",
+      "inline"
+    ],
+    "website": "https://github.com/EpicBotSl/Stickers",
+    "repository": "https://github.com/EpicBotSl/Stickers",
+    "env": {
+        "BOT_TOKEN": {
+            "description": "Your bot token.",
+            "value": "5455142286:AAEgWO-mJDVtwu9fWFPNAqIK2qsOze8KZnk"
+        },
+        "API_ID": {
+            "description": "Get this value from https://my.telegram.org",
+            "value": "16884543"
+        },
+        "API_HASH": {
+            "description": "Get this value from https://my.telegram.org",
+            "value": "cc4535cefe1fa2e167d75a5e2ac24246"
+        }
+    },
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
